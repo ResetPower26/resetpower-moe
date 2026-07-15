@@ -10,3 +10,167 @@ html {
 .root {
   isolation: isolate;
 }
+
+/* Apply the selected theme before mapping existing light utilities. */
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  body {
+    background-color: var(--color-slate-950);
+  }
+
+  .bg-white {
+    background-color: var(--color-slate-900);
+  }
+
+  [class~="bg-white/80"] {
+    background-color: color-mix(
+      in srgb,
+      var(--color-slate-900) 80%,
+      transparent
+    );
+  }
+
+  .bg-slate-50 {
+    background-color: var(--color-slate-950);
+  }
+
+  .bg-slate-100 {
+    background-color: var(--color-slate-800);
+  }
+
+  .bg-slate-200 {
+    background-color: var(--color-slate-700);
+  }
+
+  .bg-blue-50,
+  .bg-blue-100 {
+    background-color: var(--color-blue-950);
+  }
+
+  .bg-red-50 {
+    background-color: var(--color-red-950);
+  }
+
+  .bg-amber-50 {
+    background-color: var(--color-amber-950);
+  }
+
+  .text-slate-900 {
+    color: var(--color-slate-100);
+  }
+
+  .text-slate-800 {
+    color: var(--color-slate-200);
+  }
+
+  .text-slate-700 {
+    color: var(--color-slate-300);
+  }
+
+  .text-slate-600,
+  .text-slate-500 {
+    color: var(--color-slate-400);
+  }
+
+  .text-slate-400 {
+    color: var(--color-slate-500);
+  }
+
+  .text-slate-300 {
+    color: var(--color-slate-600);
+  }
+
+  .text-amber-600,
+  .text-amber-700 {
+    color: var(--color-amber-400);
+  }
+
+  .text-red-500,
+  .text-red-600 {
+    color: var(--color-red-400);
+  }
+
+  .border-white {
+    border-color: var(--color-slate-700);
+  }
+
+  .border-slate-100 {
+    border-color: var(--color-slate-800);
+  }
+
+  .border-slate-200 {
+    border-color: var(--color-slate-700);
+  }
+
+  .border-slate-300 {
+    border-color: var(--color-slate-600);
+  }
+
+  .border-red-200 {
+    border-color: var(--color-red-900);
+  }
+
+  .border-amber-200 {
+    border-color: var(--color-amber-900);
+  }
+
+  .from-blue-50 {
+    --tw-gradient-from: var(--color-blue-950);
+  }
+
+  .to-slate-100 {
+    --tw-gradient-to: var(--color-slate-800);
+  }
+
+  [class~="hover:bg-slate-50"]:hover,
+  [class~="focus:bg-slate-50"]:focus,
+  [class~="data-highlighted:bg-slate-50"][data-highlighted] {
+    background-color: var(--color-slate-800);
+  }
+
+  [class~="hover:bg-slate-100"]:hover,
+  [class~="hover:bg-slate-200"]:hover {
+    background-color: var(--color-slate-700);
+  }
+
+  [class~="hover:text-slate-600"]:hover,
+  [class~="hover:text-slate-700"]:hover,
+  [class~="hover:text-slate-800"]:hover,
+  [class~="hover:text-slate-900"]:hover {
+    color: var(--color-slate-200);
+  }
+
+  [class~="hover:border-slate-300"]:hover {
+    border-color: var(--color-slate-500);
+  }
+
+  .placeholder\:text-slate-400::placeholder {
+    color: var(--color-slate-500);
+  }
+
+  .prose-slate {
+    --tw-prose-body: var(--color-slate-300);
+    --tw-prose-headings: var(--color-slate-100);
+    --tw-prose-lead: var(--color-slate-400);
+    --tw-prose-links: var(--color-blue-400);
+    --tw-prose-bold: var(--color-slate-100);
+    --tw-prose-counters: var(--color-slate-400);
+    --tw-prose-bullets: var(--color-slate-600);
+    --tw-prose-hr: var(--color-slate-700);
+    --tw-prose-quotes: var(--color-slate-100);
+    --tw-prose-quote-borders: var(--color-slate-700);
+    --tw-prose-captions: var(--color-slate-400);
+    --tw-prose-kbd: var(--color-slate-100);
+    --tw-prose-kbd-shadows: 255 255 255;
+    --tw-prose-code: var(--color-slate-100);
+    --tw-prose-pre-code: var(--color-slate-300);
+    --tw-prose-pre-bg: var(--color-slate-950);
+    --tw-prose-th-borders: var(--color-slate-600);
+    --tw-prose-td-borders: var(--color-slate-700);
+  }
+}

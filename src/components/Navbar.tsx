@@ -2,11 +2,14 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
+import { useThemePreference } from "../hooks/useThemePreference";
 import { Button } from "./Button";
+import { ThemeSelector } from "./ThemeSelector";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { isLoggedIn } = useAuth();
+  const { themePreference, setThemePreference } = useThemePreference();
   const navigate = useNavigate();
 
   const navLinks = [
@@ -56,10 +59,18 @@ export function Navbar() {
             >
               后台登录
             </Button>
+            <ThemeSelector
+              value={themePreference}
+              onChange={setThemePreference}
+            />
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center gap-1 md:hidden">
+            <ThemeSelector
+              value={themePreference}
+              onChange={setThemePreference}
+            />
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
